@@ -74,10 +74,10 @@ export default function TextForm(props) {
   
   return (
     <>
-    <div className='container'>
-     <h1 >{props.heading}</h1>
-      <div className="mb-3">
-         <textarea className="form-control" id="my Box" rows="8" style={font} value={text} onChange={handleOnChnage} ></textarea>
+    <div className='container' >
+     <h1 style={{color: props.mode=== 'light'? 'black': 'white'}} >{props.heading}</h1>
+      <div  className="mb-3">
+         <textarea className="form-control" id="my Box" rows="8"  style={{fontFamily: font.fontFamily, backgroundColor: props.mode === 'light' ? 'white' : 'rgb(0 29 53)',color: props.mode === 'dark' ? 'white' : 'black' }} value={text} onChange={handleOnChnage} ></textarea>
        </div>
        <button className='btn btn-primary mx-2 my-2' onClick={handleUpClick}  >Convert to Uppercase</button>
        <button className='btn btn-primary mx-2 my-2' onClick={handleLoClick}  >Convert to Lowercase</button>
@@ -91,17 +91,17 @@ export default function TextForm(props) {
             <a className="dropdown-item" onClick={() => changeFont('Arial')}>Arial</a>
             <a className="dropdown-item" onClick={() => changeFont('')}>Default</a>
 
-            </div>
+          </div>
        </div>
        <button type="button" className="btn btn-secondary mx-2 my-2" onClick={handleReset} >Clear Text</button>
     </div>
 
     <div className="container my-3">
-      <h2>Your text summary: </h2>
-      <p>{text.split(" ").length} word and {text.length} characters</p>
-      <p>Above texts can be read in { 0.008 * text.split(" ").length} minutes</p>
-      <h2>Preview</h2>
-      <p>{text}</p>
+      <h2 style={{color: props.mode=== 'light'? 'black': 'white'}}>Your text summary: </h2>
+      <p style={{color: props.mode=== 'light'? 'black': 'white'}}>{text.split(" ").length} word and {text.length} characters</p>
+      <p style={{color: props.mode=== 'light'? 'black': 'white'}}>Above texts can be read in { 0.008 * text.split(" ").length} minutes</p>
+      <h2 style={{color: props.mode=== 'light'? 'black': 'white'}}>Preview</h2>
+      <p style={{color: props.mode=== 'light'? 'black': 'white',fontFamily:font.fontFamily}}>{text.length>0?text:"Enter any text to Preview"}</p>
     </div>
     </>
 )
