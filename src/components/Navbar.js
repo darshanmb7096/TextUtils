@@ -52,7 +52,7 @@ Navbar.propTypes = {
   };
   
   Navbar.defaultProps = {
-    title: "TEXTUTILS",
+    title: "Text_Friendly",
     About: "About Us"
   };
 
