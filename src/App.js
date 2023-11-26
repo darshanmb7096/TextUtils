@@ -2,9 +2,11 @@
 import './App.css';
 import About from './components/About';
 import Alert from './components/Alert';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm';
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 
 function App() {
@@ -42,16 +44,26 @@ function App() {
       showAlert("Light Mode has Enabled ","success")
     }
   }
+  const footerStyle = {
+    // Define your styles here
+    backgroundColor: 'gray',
+    color: 'white',
+    
+    // ... other CSS properties
+};
 
   return (
-   <>
-      <Navbar mode={mode} toggleMode = {EnableDarkMode} modeText={modeText} />
-      <Alert Alert={alert}/>
+    <Scrollbars style={{ width: '100%', height: '100vh', maxWidth: '100vw',Color:mode==='light'?'#212529':'white' }}>
+    <div className={mode === 'light' ? 'light-mode' : 'dark-mode'}>
+      <Navbar mode={mode} toggleMode={EnableDarkMode} modeText={modeText} />
+      <Alert Alert={alert} />
       <div className="container">
-       <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />
-       {/* <About /> */}
+        <TextForm heading="Enter the text to analyze" mode={mode} showAlert={showAlert} />
+        {/* <About /> */}
       </div>
-   </>
+      <Footer mode={mode} toggleMode={EnableDarkMode} />
+    </div>
+  </Scrollbars>
   );
 }
 
