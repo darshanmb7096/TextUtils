@@ -89,6 +89,11 @@ export default function TextForm(props) {
     }
   };
 
+  const Count=()=>{
+    const trimmedText = text.trim();
+    return trimmedText.length > 0 ? trimmedText.split(/\s+/).length : 0;
+  }
+
 
 
 
@@ -118,7 +123,7 @@ export default function TextForm(props) {
 
       <div className="container my-3">
         <h2 style={{ color: props.mode === 'light' ? 'black' : 'white' }}>Your text summary: </h2>
-        <p style={{ color: props.mode === 'light' ? 'black' : 'white' }}>{text.split(" ").length} word and {text.length} characters</p>
+        <p style={{ color: props.mode === 'light' ? 'black' : 'white' }}>{Count()} words and {text.trim().length} characters </p>
         <p style={{ color: props.mode === 'light' ? 'black' : 'white' }}>Above texts can be read in {0.008 * text.split(" ").length} minutes</p>
         <h2 style={{ color: props.mode === 'light' ? 'black' : 'white' }}>Preview</h2>
         <p style={{ color: props.mode === 'light' ? 'black' : 'white', fontFamily: font.fontFamily }}>{text.length > 0 ? text : "Enter any text to Preview"}</p>
