@@ -20,6 +20,9 @@ export default function Navbar(props) {
             <a className="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
+            <a className="nav-link" href="/TryIt">{props.tryIt}</a>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="/about">{props.About}</a>
           </li>
           <li className="nav-item dropdown">
@@ -54,6 +57,8 @@ Navbar.propTypes = {
   
   Navbar.defaultProps = {
     title: "Text_Friendly",
-    About: "About Us"
+    About: "About Us",
+    tryIt:"Try It"
+
   };
 
