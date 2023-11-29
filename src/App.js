@@ -8,6 +8,7 @@ import Home from './components/Home';
 import React, { useState, useEffect } from 'react';
 import { Scrollbars } from 'react-custom-scrollbars';
 import { BrowserRouter as Main, Route, Routes, Redirect, Switch } from 'react-router-dom'
+import SpellChecker from './components/SpellChecker';
 
 function App() {
   // Load mode from localStorage or use 'light' as default
@@ -53,6 +54,9 @@ function App() {
           <Alert Alert={alert} />
           <div>
             <Switch>
+               <Route path='/SpellChecker' >
+                <SpellChecker mode={mode} toggleMode={EnableDarkMode} />
+              </Route>
               <Route path='/about'>
                 <div className='container'>
                   <About mode={mode} toggleMode={EnableDarkMode} />
@@ -66,6 +70,8 @@ function App() {
                 <Home mode={mode} toggleMode={EnableDarkMode} />
                 <Footer mode={mode} toggleMode={EnableDarkMode} />
               </Route>
+
+             
             </Switch>
           </div>
         </div>
