@@ -31,7 +31,8 @@ export default function About(props) {
 
     return (
          <>
-         <h1 className={`my-3 text-${props.mode === 'dark'?'light':'dark'}`}   >About us</h1>
+           <div className="container">
+           <h1 className={` my-3 text-${props.mode === 'dark'?'light':'dark'} `}   >About us</h1>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item" >
                     <h2 className="accordion-header" id="headingOne">
@@ -71,6 +72,7 @@ export default function About(props) {
                     </div>
                 </div>
             </div>
+           </div>
          </>
     )
 }

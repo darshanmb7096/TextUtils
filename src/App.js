@@ -54,8 +54,9 @@ function App() {
           <div>
             <Switch>
               <Route path='/about'>
-                <div className='container'>
+                <div >
                   <About mode={mode} toggleMode={EnableDarkMode} />
+                  <Footer mode={mode} toggleMode={EnableDarkMode} />
                 </div>
               </Route>
               <Route path='/TryIt'>
